@@ -2,9 +2,9 @@ import java.util.Scanner;
 
 public class Days_switch {
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
+		Scanner Sc = new Scanner(System.in);
 		System.out.print("Enter a day number (1-7): ");
-		int day = scanner.nextInt();
+		int day = Sc.nextInt();
 
 		switch (day) {
 			case 1:
@@ -32,6 +32,6 @@ public class Days_switch {
 				System.out.println("Invalid day number.");
 		}
 
-		scanner.close();
+		Sc.close();
 	}
 }

@@ -2,9 +2,9 @@ import java.util.Scanner;
 
 public class Days_if_else {
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
+		Scanner Sc = new Scanner(System.in);
 		System.out.print("Enter a day number (1-7): ");
-		int day = scanner.nextInt();
+		int day = Sc.nextInt();
 
 		if (day == 1) {
 			System.out.println("It is Sunday.");
@@ -24,6 +24,6 @@ public class Days_if_else {
 			System.out.println("Invalid day.");
 		}
 
-		scanner.close();
+		Sc.close();
 	}
 }
