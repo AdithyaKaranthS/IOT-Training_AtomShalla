@@ -1,0 +1,41 @@
+jshell> int res = 10 + 5 * 2 - 8 / 4
+res ==> 18
+
+jshell> int a = 10
+a ==> 10
+
+jshell> int b = 5
+b ==> 5
+
+jshell> int c = 2
+c ==> 2
+
+jshell> a + b * c > 15 && a - b == 5
+$5 ==> true
+
+jshell> int x = 5
+x ==> 5
+
+jshell> int res = ++x * 2 + x++
+res ==> 18
+
+jshell> int a = 10
+a ==> 10
+
+jshell> int b = 20
+b ==> 20
+
+jshell> a < b && a + 10 == b || a * 2 > b
+$10 ==> true
+
+jshell> int a = 5
+a ==> 5
+
+jshell> int b = 10
+b ==> 10
+
+jshell> int c = 15
+c ==> 15
+
+jshell> a+b*c>100&&c-b*a==50
+$14 ==> false
