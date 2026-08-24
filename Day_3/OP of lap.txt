@@ -1,0 +1,70 @@
+Choose a laptop:
+1. l1 - Dell XPS 13
+2. l2 - HP Pavilion
+Enter your choice (1 or 2): 1
+Start the laptop? (yes/no): yes 
+The laptop is starting...
+Brand: Dell
+Model: XPS 13
+RAM: 32GB
+Storage: 1024GB
+
+Choose an action:
+1. Install an app
+2. Delete an app
+3. Shut down
+Enter your choice: 1
+Enter the app name to install: vs
+Enter the app size in GB: 2
+vs installed successfully.
+Remaining storage: 1022GB
+
+Choose an action:
+1. Install an app
+2. Delete an app
+3. Shut down
+Enter your choice: 1
+Enter the app name to install: cod
+Enter the app size in GB: 200
+cod installed successfully.
+Remaining storage: 822GB
+
+Choose an action:
+1. Install an app
+2. Delete an app
+3. Shut down
+Enter your choice: 1
+Enter the app name to install: cs
+Enter the app size in GB: 40
+cs installed successfully.
+Remaining storage: 782GB
+
+Choose an action:
+1. Install an app
+2. Delete an app
+3. Shut down
+Enter your choice: 1
+Enter the app name to install: nightreign 
+Enter the app size in GB: 21
+nightreign  installed successfully.
+Remaining storage: 761GB
+
+Choose an action:
+1. Install an app
+2. Delete an app
+3. Shut down
+Enter your choice: 2
+Installed apps:
+1. vs
+2. cod
+3. cs
+4. nightreign 
+Enter the number of the app to delete: 2
+cod deleted successfully.
+Remaining storage: 961GB
+
+Choose an action:
+1. Install an app
+2. Delete an app
+3. Shut down
+Enter your choice: 

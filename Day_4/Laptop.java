@@ -23,9 +23,9 @@ class Laptop {
         System.out.println("Storage: " + storage + "GB");
     }
 
-    void startLaptop(Scanner scanner) {
+    void startLaptop(Scanner Sc) {
         System.out.print("Start the laptop? (yes/no): ");
-        String choice = scanner.nextLine();
+        String choice = Sc.nextLine();
 
         if (!choice.equalsIgnoreCase("yes")) {
             System.out.println("The laptop is turned off.");
@@ -42,18 +42,18 @@ class Laptop {
             System.out.println("2. Delete an app");
             System.out.println("3. Shut down");
             System.out.print("Enter your choice: ");
-            int action = scanner.nextInt();
-            scanner.nextLine();
+            int action = Sc.nextInt();
+            Sc.nextLine();
 
             if (action == 1) {
                 System.out.print("Enter the app name to install: ");
-                String appName = scanner.nextLine();
+                String appName = Sc.nextLine();
                 System.out.print("Enter the app size in GB: ");
-                int appSize = scanner.nextInt();
-                scanner.nextLine();
+                int appSize = Sc.nextInt();
+                Sc.nextLine();
                 installApp(appName, appSize);
             } else if (action == 2) {
-                deleteApp(scanner);
+                deleteApp(Sc);
             } else if (action == 3) {
                 shutdownLaptop();
                 isRunning = false;
@@ -83,7 +83,7 @@ class Laptop {
         }
     }
 
-    void deleteApp(Scanner scanner) {
+    void deleteApp(Scanner Sc) {
         if (installedApps.isEmpty()) {
             System.out.println("No apps are installed.");
             return;
@@ -94,8 +94,8 @@ class Laptop {
             System.out.println((index + 1) + ". " + installedApps.get(index));
         }
         System.out.print("Enter the number of the app to delete: ");
-        int appNumber = scanner.nextInt();
-        scanner.nextLine();
+        int appNumber = Sc.nextInt();
+        Sc.nextLine();
 
         if (appNumber >= 1 && appNumber <= installedApps.size()) {
             int appIndex = appNumber - 1;
@@ -110,7 +110,7 @@ class Laptop {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner Sc = new Scanner(System.in);
 
         Laptop l1 = new Laptop("Dell", "XPS 13", 32, 1024);
         Laptop l2 = new Laptop("HP", "Pavilion", 16, 512);
@@ -119,17 +119,17 @@ class Laptop {
         System.out.println("1. l1 - " + l1.brand + " " + l1.model);
         System.out.println("2. l2 - " + l2.brand + " " + l2.model);
         System.out.print("Enter your choice (1 or 2): ");
-        int choice = scanner.nextInt();
-        scanner.nextLine();
+        int choice = Sc.nextInt();
+        Sc.nextLine();
 
         if (choice == 1) {
-            l1.startLaptop(scanner);
+            l1.startLaptop(Sc);
         } else if (choice == 2) {
-            l2.startLaptop(scanner);
+            l2.startLaptop(Sc);
         } else {
             System.out.println("Invalid laptop choice.");
         }
 
-        scanner.close();
+        Sc.close();
     }
 }
