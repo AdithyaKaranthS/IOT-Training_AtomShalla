@@ -1,4 +1,4 @@
-class Second_largest {
+  class Second_largest {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5};
         int largest = arr[0];
