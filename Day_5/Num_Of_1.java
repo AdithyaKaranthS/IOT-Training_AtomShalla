@@ -1,13 +1,19 @@
+import java.util.Scanner;
+
 class Num_Of_1 {
     public static void main(String[] args) {
-        int[] arr = {1, 0, 1, 1, 0, 1};
+        Scanner scanner = new Scanner(System.in);
         int count = 0;
 
-        for (int num : arr) {
+        System.out.println("Enter 6 numbers:");
+        for (int i = 1; i <= 6; i++) {
+            int num = scanner.nextInt();
             if (num == 1) {
                 count++;
             }
         }
-        System.out.println("Number of 1s in the array is: " + count);
+
+        System.out.println("Number of 1s entered: " + count);
+        scanner.close();
     }
 }
