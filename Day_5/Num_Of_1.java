@@ -5,21 +5,21 @@ class Num_Of_1 {
         Scanner scanner = new Scanner(System.in);
         int count = 0;
 
-        System.out.println("Enter 6 numbers:");
-        for (int i = 1; i <= 6; i++) {
-            if (!scanner.hasNextInt()) {
-                System.out.println("Please enter 6 valid numbers.");
-                scanner.close();
-                return;
-            }
+        System.out.print("Enter a number: ");
+        if (!scanner.hasNext()) {
+            System.out.println("Please enter a valid number.");
+            scanner.close();
+            return;
+        }
 
-            int num = scanner.nextInt();
-            if (num == 1) {
+        String number = scanner.next();
+        for (int index = 0; index < number.length(); index++) {
+            if (number.charAt(index) == '1') {
                 count++;
             }
         }
 
-        System.out.println("Number of 1s entered: " + count);
+        System.out.println("Number of 1s in the number: " + count);
         scanner.close();
     }
 }
