@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class BankAccount {
     private String accountNumber;
     private String bankName;
@@ -115,15 +117,82 @@ public class PhonePeDemo {
         userA.setBankAccount(bankA);
         userB.setBankAccount(bankB);
 
-        userA.addMoneyToWallet(500);
-        userA.sendMoney(userB, 200);
+        PhonePeUser[] users = { userA, userB };
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("User A:");
-        userA.checkBalance();
+        while (true) {
+            System.out.println("\n=== PhonePe Demo ===");
+            System.out.println("1. Add money to wallet");
+            System.out.println("2. Send money");
+            System.out.println("3. Check balance");
+            System.out.println("4. Exit");
+            System.out.print("Choose an option: ");
 
-        System.out.println();
+            String option = scanner.nextLine();
 
-        System.out.println("User B:");
-        userB.checkBalance();
+            if (option.equals("1")) {
+                PhonePeUser user = chooseUser(scanner, users, "Select a user: ");
+                double amount = readAmount(scanner, "Enter amount to add: ");
+
+                if (user.addMoneyToWallet(amount)) {
+                    System.out.println("Money added successfully.");
+                } else {
+                    System.out.println("Unable to add money. Check the amount and bank balance.");
+                }
+            } else if (option.equals("2")) {
+                PhonePeUser sender = chooseUser(scanner, users, "Select sender: ");
+                PhonePeUser receiver = chooseUser(scanner, users, "Select receiver: ");
+                double amount = readAmount(scanner, "Enter amount to send: ");
+
+                if (sender.sendMoney(receiver, amount)) {
+                    System.out.println("Money sent successfully.");
+                } else {
+                    System.out.println("Unable to send money. Check the amount and wallet balance.");
+                }
+            } else if (option.equals("3")) {
+                PhonePeUser user = chooseUser(scanner, users, "Select a user: ");
+                user.checkBalance();
+            } else if (option.equals("4")) {
+                System.out.println("Thank you for using PhonePe Demo.");
+                break;
+            } else {
+                System.out.println("Invalid option. Please choose 1 to 4.");
+            }
+        }
+
+        scanner.close();
+    }
+
+    private static PhonePeUser chooseUser(Scanner scanner, PhonePeUser[] users, String prompt) {
+        while (true) {
+            System.out.println(prompt);
+            System.out.println("1. " + users[0].getName());
+            System.out.println("2. " + users[1].getName());
+            System.out.print("Choose a user: ");
+
+            String choice = scanner.nextLine();
+            if (choice.equals("1")) {
+                return users[0];
+            }
+            if (choice.equals("2")) {
+                return users[1];
+            }
+            System.out.println("Invalid user. Please choose 1 or 2.");
+        }
+    }
+
+    private static double readAmount(Scanner scanner, String prompt) {
+        while (true) {
+            System.out.print(prompt);
+            try {
+                double amount = Double.parseDouble(scanner.nextLine());
+                if (amount > 0) {
+                    return amount;
+                }
+            } catch (NumberFormatException exception) {
+                // Ask again when the input is not a valid number.
+            }
+            System.out.println("Enter a valid amount greater than zero.");
+        }
     }
 }
